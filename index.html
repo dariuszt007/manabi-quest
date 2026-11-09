@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manabi Quest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1 data-i18n="title">Manabi Quest</h1>
+      <p data-i18n="subtitle"></p>
+    </div>
+
+    <label class="language-control">
+      <span data-i18n="languageLabel"></span>
+      <select id="languageSelect" aria-label="Language">
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+        <option value="pl">Polski</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <section class="filters card">
+      <label>
+        <span data-i18n="gradeLabel"></span>
+        <select id="gradeSelect"></select>
+      </label>
+
+      <label>
+        <span data-i18n="subjectLabel"></span>
+        <select id="subjectSelect"></select>
+      </label>
+    </section>
+
+    <section class="dashboard">
+      <aside class="card mission-card">
+        <h2 data-i18n="missionsTitle"></h2>
+        <p id="missionCount" class="muted"></p>
+        <div id="missionList" class="mission-list"></div>
+      </aside>
+
+      <section class="card play-card">
+        <div id="missionArea">
+          <h2 data-i18n="welcomeTitle"></h2>
+          <p data-i18n="welcomeText"></p>
+        </div>
+      </section>
+
+      <aside class="card rewards-card">
+        <h2 data-i18n="rewardsTitle"></h2>
+        <p><span data-i18n="pointsLabel"></span>: <strong id="points">0</strong></p>
+        <p><span data-i18n="completedLabel"></span>: <strong id="completedCount">0</strong></p>
+        <div id="badges"></div>
+        <button id="resetProgress" class="secondary-button" data-i18n="resetProgress"></button>
+      </aside>
+    </section>
+
+    <details class="card teacher-panel">
+      <summary data-i18n="teacherTitle"></summary>
+      <p data-i18n="teacherHelp"></p>
+
+      <textarea id="missionJson" spellcheck="false" aria-label="JSON missions"></textarea>
+
+      <div class="teacher-buttons">
+        <button id="importMissions" data-i18n="importButton"></button>
+        <button id="exportMissions" class="secondary-button" data-i18n="exportButton"></button>
+        <button id="resetMissions" class="secondary-button" data-i18n="restoreButton"></button>
+      </div>
+
+      <p id="teacherMessage" class="muted" aria-live="polite"></p>
+    </details>
+  </main>
+
+  <footer>
+    <p data-i18n="footerText"></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
